@@ -3,6 +3,7 @@ import Header from "../componets/Header";
 import Body from "./Body";
 import CategoriesCard from "../componets/CategoriesCard";
 import Loader from "../componets/Loader";
+import Drawer from "../componets/Drawer";
 
 export default class HomePage extends Component {
   state = { products: [], loading: true };
@@ -20,7 +21,6 @@ export default class HomePage extends Component {
   };
 
   onProductSelect = (selectedProduct) => {
-     
     this.props.history.push(`/product/${selectedProduct.id}`);
   };
 
@@ -33,6 +33,7 @@ export default class HomePage extends Component {
             <Loader />
           ) : (
             <div className="row ">
+              <Drawer/>
               <div className="col-lg-3 col-md-4">
                 <CategoriesCard />
               </div>
